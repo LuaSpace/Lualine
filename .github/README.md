@@ -1,5 +1,6 @@
-Experimental Branch
+# Experimental Branch
 
+Welcome to the LuaSpace experimental branch! Feel free to test the scripts, fix them, or make your own script.
 
 <details><summary><h3>Boilerplate</h3></summary>
 
