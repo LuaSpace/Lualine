@@ -4,15 +4,15 @@
   / /   / / / / __ `/\__ \/ __ \/ __ `/ ___/ _ \
  / /___/ /_/ / /_/ /___/ / /_/ / /_/ / /__/  __/
 /_____/\__,_/\__,_//____/ .___/\__,_/\___/\___/ 
-                       /_/                     v1 | © LuaSpace 2023
----]]
+                       /_/                      v1 | © LuaSpace 2023        
+--]]
 
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
 local Window = Rayfield:CreateWindow({
 	Name = "LuaSpace | Zombie Attack",
 	LoadingTitle = "LuaSpace hub is loading",
-	LoadingSubtitle = "rofl",
+	LoadingSubtitle = "KILL DA ZOMBIEZ",
 	ConfigurationSaving = {
 		Enabled = true,
 		FolderName = nil, -- Create a custom folder for your hub/game
@@ -36,8 +36,8 @@ local Window = Rayfield:CreateWindow({
 })
 
 Rayfield:Notify({
-    Title = "Loaded!",
-    Content = "Welcome to LuaSpace Hub!",
+    Title = "LuaSpace | Zombie Attack",
+    Content = "Loaded",
     Duration = 6.5,
     Image = 4483362458,
     Actions = { -- Notification Buttons
@@ -108,3 +108,10 @@ local AutoFarm = Tab:CreateToggle({
                     wait()
                 end
             end
+
+    		-- The variable (Value) is a boolean on whether the toggle is true or false
+	end,
+})
+
+--https://github.com/LuaSpace/luaspace
+
