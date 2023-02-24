@@ -86,7 +86,12 @@ local jump = LP:CreateSlider({
 	end,
 })
 
-
+local RejoinLOL = LP:CreateButton({
+	Name = "Rejoin",
+	Callback = function()
+		game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
+	end,
+})
 
 local World = Window:CreateTab("World", 4483362458) 
 
@@ -143,20 +148,25 @@ local Performance = World:CreateButton({
 	end,
 })
 
-local TimeLmao = World:CreateSlider({
-	Name = "Time",
-	Range = {0, 24},
-	Increment = 1,
-	Suffix = "o'clock",
-	CurrentValue = 10,
-	Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-	Callback = function(TimeRatio)
-		local TimeRatio = TimeRatio
-		local Light = game:GetService
-    		-- The variable (Value) is a number which correlates to the value the slider is currently at
+
+local Disco = World:CreateButton({
+	Name = "Disco",
+	Callback = function()
+		while true do 
+			wait(.5)
+			game.Lighting.Ambient = Color3.new(math.random(), math.random(), math.random())
+		end
 	end,
 })
 
+
 local Scripts = Window:CreateTab("Scripts", 4483362458) 
+
+local IY = Scripts:CreateButton({
+	Name = "Infinite Yield",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	end,
+})
 
 --https://github.com/LuaSpace/luaspace
