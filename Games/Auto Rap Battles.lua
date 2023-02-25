@@ -5,45 +5,44 @@
  / /___/ /_/ / /_/ /___/ / /_/ / /_/ / /__/  __/
 /_____/\__,_/\__,_//____/ .___/\__,_/\___/\___/ 
                        /_/                      v1 | © LuaSpace 2023        
-
----]]
+--]]
 
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
 local Window = Rayfield:CreateWindow({
-	Name = "Auto Rap Battles",
-	LoadingTitle = "me pro you noob",
-	LoadingSubtitle = "- Me",
+	Name = "LuaSpace | Auto Rap Battles",
+	LoadingTitle = "LuaSpace hub is loading",
+	LoadingSubtitle = "me cool you pool",
 	ConfigurationSaving = {
 		Enabled = true,
-		FolderName = nil, -- Create a custom folder for your hub/game
+		FolderName = nil, 
 		FileName = "LuaSpaceAutoRapBattles"
 	},
         Discord = {
         	Enabled = false,
-        	Invite = "loser", -- The Discord invite code, do not include discord.gg/
-        	RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+        	Invite = "loser", 
+        	RememberJoins = true 
         },
-	KeySystem = false, -- Set this to true to use our key system
+	KeySystem = false, 
 	KeySettings = {
 		Title = "No Key System :)",
 		Subtitle = "No Key System :)",
 		Note = "No Key System :)",
 		FileName = "No Key System :)",
 		SaveKey = true,
-		GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+		GrabKeyFromSite = false, 
 		Key = "No Key System :)"
 	}
 })
 
 Rayfield:Notify({
-    Title = "Loaded!",
-    Content = "LuaSpace | Auto Rap Battles ",
+    Title = "LuaSpace | Auto Rap Battles",
+    Content = "Loaded ",
     Duration = 6.5,
     Image = 4483362458,
-    Actions = { -- Notification Buttons
+    Actions = { 
         Ignore = {
-            Name = "Okay!",
+            Name = "Start Rapping!",
             Callback = function()
                 print("ZOMBIES")
             end
@@ -112,8 +111,6 @@ local GoBack = Tab:CreateButton({
 
 local UwuDaddy = Window:CreateTab("Misc", 4483362458) 
 
-local HAHAGETREKTNOOB = Tab:CreateSection("Admin Script")
-
 local IY = UwuDaddy:CreateButton({
 	Name = "Infinite Yield",
 	Callback = function()
@@ -121,12 +118,15 @@ local IY = UwuDaddy:CreateButton({
 	end,
 })
 
-local UWUSRE = Tab:CreateSection("Misc Scripts")
-
-
 local Flinger = UwuDaddy:CreateButton({
 	Name = "Fling People",
 	Callback = function()
 		loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
 	end,
 })
+
+
+
+
+
+--https://github.com/LuaSpace/luaspace
