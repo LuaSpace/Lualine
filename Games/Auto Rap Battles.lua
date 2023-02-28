@@ -4,53 +4,135 @@
   / /   / / / / __ `/\__ \/ __ \/ __ `/ ___/ _ \
  / /___/ /_/ / /_/ /___/ / /_/ / /_/ / /__/  __/
 /_____/\__,_/\__,_//____/ .___/\__,_/\___/\___/ 
-                       /_/                      v1 | © LuaSpace 2023        
+                       /_/                      v2 | © LuaSpace 2023        
 --]]
 
-local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+_G.OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
+local OrionLib = _G.OrionLib
 
-local Window = Rayfield:CreateWindow({
-	Name = "LuaSpace | Auto Rap Battles",
-	LoadingTitle = "LuaSpace hub is loading",
-	LoadingSubtitle = "me cool you pool",
-	ConfigurationSaving = {
-		Enabled = true,
-		FolderName = nil, 
-		FileName = "LuaSpaceAutoRapBattles"
-	},
-        Discord = {
-        	Enabled = false,
-        	Invite = "loser", 
-        	RememberJoins = true 
-        },
-	KeySystem = false, 
-	KeySettings = {
-		Title = "No Key System :)",
-		Subtitle = "No Key System :)",
-		Note = "No Key System :)",
-		FileName = "No Key System :)",
-		SaveKey = true,
-		GrabKeyFromSite = false, 
-		Key = "No Key System :)"
-	}
+local Window = OrionLib:MakeWindow({Name = "LuaSpace | Auto Rap Battles 🎤", HidePremium = false, SaveConfig = true, ConfigFolder = "LuaSpaceAutoRapBattles", IntroEnabled = false, IntroText = "Welcome to LuaSpace"})
+
+local Main = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://11129688807"
+})
+local AutoRap = Window:MakeTab({
+    Name = "Auto Raps",
+    Icon = "rbxassetid://7203392850"
+})
+local Misc = Window:MakeTab({
+    Name = "Misc",
+    Icon = "rbxassetid://4483345998"
+})
+local Teleports = Window:MakeTab({
+    Name = "Teleports",
+    Icon = "rbxassetid://6723742952"
+})
+local Credits = Window:MakeTab({
+    Name = "Credits",
+    Icon = "rbxassetid://6962520787"
 })
 
-Rayfield:Notify({
-    Title = "LuaSpace | Auto Rap Battles",
-    Content = "Loaded ",
-    Duration = 6.5,
-    Image = 4483362458,
-    Actions = { 
-        Ignore = {
-            Name = "Start Rapping!",
-            Callback = function()
-                print("ZOMBIES")
-            end
-		},
-	},
+-- Main tab
+
+Main:AddButton({
+	Name = "Vote Player 1!",
+	Callback = function()
+		for i = 0,1 do
+            game.Workspace.Votes:FireServer(false,"p1")
+            game:GetService("RunService").Heartbeat:Wait()
+         end
+	end,
+})
+
+Main:AddButton({
+	Name = "Vote Player 2!",
+	Callback = function()
+		for i = 0,1 do
+            game.Workspace.Votes:FireServer(false,"p2")
+            game:GetService("RunService").Heartbeat:Wait()
+         end
+	end,
+})
+
+-- Autorap
+
+AutoRap:AddParagraph("Coming Soon","Join our discord server for updates")
+
+-- Misc
+
+Misc:AddSlider({
+	Name = "Speed",
+	Min = 0,
+	Max = 1000,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Walkspeed",
+	Callback = function(Speed)
+		local Speed = Speed 
+		local Player = game:GetService("Players").LocalPlayer.Character
+		Player.Humanoid.WalkSpeed = Speed
+	end    
+})
+
+Misc:AddButton({
+	Name = "Infinite Yield",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	end,   
 })
 
 
+-- Teleports
+
+Teleports:AddButton({
+	Name = "Teleport to DJ Booth",
+	Callback = function()
+		for i = 0,1 do
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-90, 65, -214)
+		end
+    end
+})
+
+Teleports:AddButton({
+	Name = "Teleport to Stage",
+	Callback = function()
+		for i = 0,1 do
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-77, 65, -214)
+
+		end
+		end
+})
+
+Teleports:AddButton({
+	Name = "Teleport to Bathroom",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-60, 62, -278)
+
+	end,
+})
+
+Teleports:AddButton({
+	Name = "Teleport to Spectators Area",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-60, 62, -214)
+	end,
+})
+
+-- Credits
+
+Credits:AddSection({ Name = "Credits:" })
+
+Credits:AddParagraph("CloakSelf"," GitHub: https://github.com/CloakSelf | Discord: SpiderDaNoob#6355")
+
+Credits:AddParagraph( "GitHub Contributors", "Github Link: https://github.com/LuaSpace/luaspace" )
+
+OrionLib:Init()
+
+--[[
+
+Rayfield Version 
 
 local Tab = Window:CreateTab("Main", 4483362458) 
 local Sexion = Tab:CreateSection("Voting")
@@ -111,17 +193,12 @@ local GoBack = Tab:CreateButton({
 
 local UwuDaddy = Window:CreateTab("Misc", 4483362458) 
 
-local HAHAGETREKTNOOB = Tab:CreateSection("Admin Script")
-
 local IY = UwuDaddy:CreateButton({
 	Name = "Infinite Yield",
 	Callback = function()
 		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 	end,
 })
-
-local UWUSRE = Tab:CreateSection("Misc Scripts")
-
 
 local Flinger = UwuDaddy:CreateButton({
 	Name = "Fling People",
@@ -135,3 +212,6 @@ local Flinger = UwuDaddy:CreateButton({
 
 
 --https://github.com/LuaSpace/luaspace
+
+]]--
+
