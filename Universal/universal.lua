@@ -4,19 +4,19 @@
   / /   / / / / __ `/\__ \/ __ \/ __ `/ ___/ _ \
  / /___/ /_/ / /_/ /___/ / /_/ / /_/ / /__/  __/
 /_____/\__,_/\__,_//____/ .___/\__,_/\___/\___/ 
-                       /_/                      v1 | © LuaSpace 2023        
+                       /_/                      v1 | © LuaLine 2023        
 --]]
 
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
 local Window = Rayfield:CreateWindow({
-	Name = "LuaSpace | Universal",
-	LoadingTitle = "LuaSpace is loading",
+	Name = "LuaLine | Universal",
+	LoadingTitle = "LuaLine is loading",
 	LoadingSubtitle = "Genuinely, these scripts are not safe for popular games",
 	ConfigurationSaving = {
 		Enabled = true,
 		FolderName = nil, -- Create a custom folder for your hub/game
-		FileName = "LuaSpaceUniversal"
+		FileName = "LuaLineUniversal"
 	},
         Discord = {
         	Enabled = false,
@@ -36,7 +36,7 @@ local Window = Rayfield:CreateWindow({
 })
 
 Rayfield:Notify({
-    Title = "LuaSpace | Universal Script",
+    Title = "LuaLine | Universal Script",
     Content = "Loaded",
     Duration = 6.5,
     Image = 4483362458,
@@ -169,4 +169,4 @@ local IY = Scripts:CreateButton({
 	end,
 })
 
---https://github.com/LuaSpace/luaspace
+--https://github.com/LuaLine/LuaLine
